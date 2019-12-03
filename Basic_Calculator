@@ -1,0 +1,47 @@
+//dołączamy plik nagłówkowy zapewniający nam podstawową funkcjonalność
+#include<stdio.h>
+
+//deklaracja zmiennych
+int x1,x2;
+char znak;
+
+//nasza główna funckja - nasz program
+int main()
+{
+    printf("Podaj pierwsza liczbe: ");
+    scanf("%d",&x1);
+    printf("Podaj druga liczbe: ");
+    scanf("%d",&x2);
+    printf("Podaj znak dzialania matematycznego: ");
+
+    //zanim wczytamy znak musimy wyczyścić bufor klawiatury ze znaku jakim jest Enter
+    //służy do tego funkcja fflush()
+    fflush(stdin);
+    scanf("%c",&znak);
+
+    if(znak=='+')
+    {
+        printf("%d+%d=%d",x1,x2,x1+x2);
+    }
+    else if(znak=='-')
+    {
+        printf("%d-%d=%d",x1,x2,x1-x2);
+    }
+    else if(znak=='*')
+    {
+        printf("%d*%d=%d",x1,x2,x1*x2);
+    }
+    else if(znak=='/')
+    {
+        //w przypadku kiedy mamy tylko jedną instrukcję po if oraz else możemy pominąć nawiasy "klamrowe"
+        //sprawdzamy czy liczba nie jest zerem
+        if(x2!=0)
+            printf("%d/%d=%f",x1,x2,(float)x1/(float)x2);
+        //w przeciwnym wypadku wypisujemy, że nie można dzielić przez 0
+        else
+            printf("Nie dzielimy przez zero!");
+    }
+
+    //koniec programu
+    return 0;
+}
