@@ -1,11 +1,17 @@
+//dodajemy plik headerowy, który zapewni nam podstawową funkcjonalność
 #include<stdio.h>
 
+//deklaracja zmiennych
 int x=1234,x2=532,x3=999;
 float y=3.14159265359;
 char z='h';
+int zmienna;
 
+//główna funkcja - nasz program
 int main()
 {
+    //printf wyświetla nam rzeczy na ekranie
+    //kody formatujące możecie znaleźć w prezentacji na moodle
     printf("henlo :D \n");
     printf("%d \n",x);
     printf("%10.2f \n",y);
@@ -17,5 +23,15 @@ int main()
     printf("%d-%d=%d \n",x,x2,x-x2);
     printf("%d*%d=%d \n",x,x2,x*x2);
     printf("%d/%d=%f \n",x,x2,(float)x/(float)x2);
+    printf(" \n");
+
+    //wcztanie zmiennej z klawiatury
+    printf("Wpisz zmienna z klawiatury: ");
+    scanf("%d",&zmienna);
+    //wypisanie wczytanej zmiennej na ekran
+    printf("Twoja zmienna to: ");
+    printf("%d \n",zmienna);
+
+    //program kończy pracę
     return 0;
 }
