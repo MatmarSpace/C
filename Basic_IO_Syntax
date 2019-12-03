@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-int x=1234;
+int x=1234,x2=532,x3=999;
 float y=3.14159265359;
 char z='h';
 
@@ -12,6 +12,10 @@ int main()
     printf("%c \n",z);
     printf("%14d \n",x);
     printf("cryfra 1 jest na rowni z cyfra 4 \n");
-    printf("pamietajcie aby nie uzywac polskich zankow");
+    printf("pamietajcie aby nie uzywac polskich zankow \n");
+    printf("%d+%d=%d \n",x,x2,x+x2);
+    printf("%d-%d=%d \n",x,x2,x-x2);
+    printf("%d*%d=%d \n",x,x2,x*x2);
+    printf("%d/%d=%f \n",x,x2,(float)x/(float)x2);
     return 0;
 }
