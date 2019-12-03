@@ -1,0 +1,17 @@
+#include<stdio.h>
+
+int x=1234;
+float y=3.14159265359;
+char z='h';
+
+int main()
+{
+    printf("henlo :D \n");
+    printf("%d \n",x);
+    printf("%10.2f \n",y);
+    printf("%c \n",z);
+    printf("%14d \n",x);
+    printf("cryfra 1 jest na rowni z cyfra 4 \n");
+    printf("pamietajcie aby nie uzywac polskich zankow");
+    return 0;
+}
