@@ -1,0 +1,67 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <stdbool.h>
+#include <time.h>
+
+//zmienne
+int random[4];
+int symbol[4];
+int errors[4];
+int index;
+int i;
+int tryNumber=0;
+bool win=false;
+int dobreNaDobrych=0;
+int dobreNaZlych=0;
+
+
+int main()
+{
+    //rozpoczêcie losowania
+    srand(time(0));
+
+    //wylosowanie 4 znaków z zakresu 0-5
+    printf("Debug: ");
+    for(index=0; index<4; index++)
+    {
+        random[index]=rand()%6;
+        printf("%d ",random[index]);
+    }
+
+    while(tryNumber<20 && win==false)
+    {
+        printf("\nZgadnij 4 znaki: ");
+
+        for(index=0; index<4; index++)
+            scanf("%d",&symbol[index]);
+
+        for(index=0; index<4; index++)
+        {
+            for(i=0;i<4;i++)
+            {
+                if(symbol[index]==random[i])
+                {
+                    if(index==i)
+                        dobreNaDobrych++;
+                    else
+                        dobreNaZlych++;
+                }
+            }
+        }
+        if(dobreNaDobrych==4)
+            win=true;
+        else
+        {
+        printf("Masz %d dobrych liczb na dobrych pozycjach\noraz %d dobrych liczb na zlych pozycjach\n",dobreNaDobrych,dobreNaZlych);
+
+        dobreNaDobrych=0;
+        dobreNaZlych=0;
+        tryNumber++;
+        }
+    }
+    if(win==true)
+        printf("Wygrales!\n");
+    else
+        printf("Przegrales!\n");
+
+}
