@@ -1,0 +1,40 @@
+#include<stdlib.h>
+#include<stdio.h>
+#include<stdbool.h>
+
+
+//Zmienne
+int liczba;
+int pierwszaLiczba;
+int licznikWszystkichLiczb=1;
+int licznikPowtorzenPierwszej=0;
+int numerPierwszegoWystapienia;
+int numerOstatniegoWystapienia;
+int pierwszeWystapienie=false;
+
+int main()
+{
+    scanf("%d",&liczba);
+    pierwszaLiczba=liczba;
+
+    while(liczba!=0)
+    {
+        scanf("%d",&liczba);
+        licznikWszystkichLiczb++;
+        if(liczba==pierwszaLiczba)
+        {
+            licznikPowtorzenPierwszej++;
+
+            if(pierwszeWystapienie==false)
+            {
+                numerPierwszegoWystapienia=licznikWszystkichLiczb;
+                pierwszeWystapienie=true;
+            }
+
+            numerOstatniegoWystapienia=licznikWszystkichLiczb;
+
+        }
+    }
+    printf("\nNumer pierwszego wystapienia: %d",numerPierwszegoWystapienia);
+    printf("\nNumer ostatniego wystapienia: %d",numerOstatniegoWystapienia);
+}
