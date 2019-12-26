@@ -1,0 +1,48 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <stdbool.h>
+
+int a,b,c;
+
+//wszystkie możliwości:
+//a b c
+//a c b
+//b a c
+//b c a
+//c a b
+//c b a
+//(6 możliwości łącznie)
+
+int main()
+{
+    while(true)
+    {
+        //wczytywanie zmiennych
+        scanf("%d",&a);
+        scanf("%d",&b);
+        scanf("%d",&c);
+
+        //sprawdzanie warunków
+        if(a<=b)
+        {
+            if(a<=c)
+            {
+                if(b<=c)
+                    printf("%d %d %d\n",a,b,c);
+                else
+                    printf("%d %d %d\n",a,c,b);
+            }
+            else
+                printf("%d %d %d\n",c,a,b);
+        }  
+        else
+        {
+            if(a<=c)
+                printf("%d %d %d\n",b,a,c);
+            else if(b<=c)
+                printf("%d %d %d\n",b,c,a);
+            else
+                printf("%d %d %d\n",c,b,a);
+        }
+    }
+}
