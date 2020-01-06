@@ -11,15 +11,23 @@ int licznikPowtorzenPierwszej=0;
 int numerPierwszegoWystapienia;
 int numerOstatniegoWystapienia;
 int pierwszeWystapienie=false;
+int max;
+int min;
 
 int main()
 {
     scanf("%d",&liczba);
     pierwszaLiczba=liczba;
+    min=liczba;
+    max=liczba;
 
     while(liczba!=0)
     {
         scanf("%d",&liczba);
+        if(liczba>max)
+            max=liczba;
+        if(liczba<min && liczba!=0)
+            min=liczba;
         licznikWszystkichLiczb++;
         if(liczba==pierwszaLiczba)
         {
@@ -35,6 +43,15 @@ int main()
 
         }
     }
-    printf("\nNumer pierwszego wystapienia: %d",numerPierwszegoWystapienia);
-    printf("\nNumer ostatniego wystapienia: %d",numerOstatniegoWystapienia);
+    
+    if(licznikPowtorzenPierwszej==0)
+        printf("\nLiczba nie wystapila ponownie!");
+    else
+    {
+        printf("\nLiczba powtorzyla sie %d razy",licznikPowtorzenPierwszej);
+        printf("\nNumer pierwszego powtorzenia: %d",numerPierwszegoWystapienia);
+        printf("\nNumer ostatniego powtorzenia: %d",numerOstatniegoWystapienia);
+    }
+    printf("\n\nNajmniejsza wartosc w ciagu: %d",min);
+    printf("\nNajwieksza wartosc w ciagu: %d",max);
 }
