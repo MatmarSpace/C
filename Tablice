@@ -9,6 +9,7 @@
 int t[b];
 int f[b];
 int i;
+int x;
 int suma=0;
 float srednia;
 int sumaLiczbParzystych=0;
@@ -48,7 +49,8 @@ int main()
 }
 */
 
-//wylosowanie
+//wylosowanie na dwóch tablicach
+/*
 int main()
 {
     srand(time(0));
@@ -58,6 +60,44 @@ int main()
         t[i]=rand()%100+1;
         f[b-i-1]=t[i];
         suma+=t[i];
+        printf("%d ",t[i]);
+        if(t[i]%2==0)
+        {
+            sumaLiczbParzystych+=t[i];
+            iloscLiczbParzystych++;
+        }
+        else
+        {
+            sumaLiczbNieparzystych+=t[i];
+            iloscLiczbNieparzystych++;
+        }
+    }
+    printf("\n");
+    for(i=0;i<b;i++)
+    {
+        printf("%d ",f[i]);
+    }
+
+    srednia=(float)suma/(float)b;
+
+    printf("\n Suma: %d",suma);
+    printf("\n Srednia: %f",srednia);
+    printf("\n Suma liczb parzystych: %d",sumaLiczbParzystych);
+    printf("\n Suma liczb nieparzystych: %d",sumaLiczbNieparzystych);
+    printf("\n Ilosc liczb parzystych: %d",iloscLiczbParzystych);
+    printf("\n Ilosc liczb nieparzystych: %d",iloscLiczbNieparzystych);
+
+    return 0;
+}
+*/
+//wylosowanie na jednej tablicy
+int main()
+{
+    srand(time(0));
+
+    for(i=0;i<b;i++)
+    {
+        t[i]=rand()%100+1;
         printf("%d ",t[i]);
         if(t[i]%2==0)
         {
