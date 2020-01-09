@@ -9,7 +9,7 @@
 int t[b];
 int f[b];
 int i;
-int x;
+int zmiennaPomocnicza;
 int suma=0;
 float srednia;
 int sumaLiczbParzystych=0;
@@ -94,6 +94,7 @@ int main()
 int main()
 {
     srand(time(0));
+    printf("tablica wylosowana:\n");
 
     for(i=0;i<b;i++)
     {
@@ -110,13 +111,24 @@ int main()
             iloscLiczbNieparzystych++;
         }
     }
-    printf("\n");
+
+    //Pętla odwracająca tablicę
+    for(i=0;i<(float)b/2;i++)
+    {
+        zmiennaPomocnicza=t[i];
+        t[i]=t[b-i-1];
+        t[b-i-1]=zmiennaPomocnicza;
+    }
+
+    printf("\ntablica odwrocona:\n");
+
     for(i=0;i<b;i++)
     {
-        printf("%d ",f[i]);
+        printf("%d ",t[i]);
     }
 
     srednia=(float)suma/(float)b;
+
 
     printf("\n Suma: %d",suma);
     printf("\n Srednia: %f",srednia);
