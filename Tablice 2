@@ -134,5 +134,5 @@ int main()
     {
         printf("%d ",t2[i]);
     }
-
+    printf(":)\n");
 }
