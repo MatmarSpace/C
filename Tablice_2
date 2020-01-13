@@ -9,7 +9,7 @@
 
 //zmienne
 int t[b];
-int t1[c];
+int t1[b];
 int t2[2*b];
 
 int i;
