@@ -91,17 +91,17 @@ int main()
         t1[i]=rand()%10;
         printf("%d ",t1[i]);
     }
-    printf("\nszukana liczba powtorzyla sie %d razy na miejscach: ",szukanaWartosc);
+    printf("\nszukana liczba powtorzyla sie %d razy na miejscach: ",iloscWystapien);
     for(i=0;i<b;i++)
     {
-        if(t[i]==b)
+        if(t[i]==szukanaWartosc)
             printf("%d ",i);
     }
 
     //łączenie tablic
     if(b>=c)
     {
-        for(j=0;i<c;i++)
+        for(i=0;i<c;i++)
         {
             t2[j]=t[i];
             t2[j+1]=t1[i];
@@ -115,7 +115,7 @@ int main()
     }
     else
     {
-        for(j=0;i<b;i++)
+        for(i=0;i<b;i++)
         {
             t2[j]=t[i];
             t2[j+1]=t1[i];
