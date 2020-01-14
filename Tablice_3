@@ -1,0 +1,75 @@
+#include<stdlib.h>
+#include<stdio.h>
+#include<stdbool.h> //potrzebujemy tej biblioteki do użycia zmiennej typu bool
+
+#define n 6
+
+int t[n];
+int i;
+bool semafor=true;  //bool to zmienna przyjmująca wartości true/false (prawda/fałsz)
+
+int main()
+{
+    //wczytujemy tablicę z klawiatury
+    for(i=0;i<n;++i)
+        scanf("%d",&t[i]);
+    //wypisujemy wczytaną tablicę
+    for(i=0;i<n;++i)
+        printf("%d ",t[i]);
+
+    /*    ////////// WERSJA Z SEMAFOREM //////////////
+
+    //zerujemy wartość i, bo nigdzie indziej jej nie wyzerujemy w pętli while
+    i=0;
+    //pętla while do sprawdzenia, czy ciąg jest rosnący (korzystamy z semafora, czyli
+    //w momencie, gdy uznamy, że ciąg nie spełnia naszego warunku zmieniamy wartość semafora
+    while(i<n-1 && semafor==true)
+    {
+        if(t[i]>t[i+1])
+            semafor=false;
+        ++i;
+    }
+
+    //jeśli ciąg jest rosnący to semafor będzie równy true, więc sprawdzamy, czy tak jest i wypisujemy odpowiednią odpowiedź
+    //instrukcja ta równoważna jest z zapisaniem if(semafor==true)
+    if(semafor)
+        printf("\nCiag jest rosnacy");
+    else
+        printf("\nCiag nie jest rosnacy");
+
+    */
+
+    /*        //////////////// WERSJA Z PRZEINKREMENTOWANIEM ///////////////////
+
+   //pętla for sprawdzająca czy ciąg jest rosnący przez przeinkrementowanie
+   //w momencie, gdy wykryjemy, że ciąg nie jest rosnący zmieniamy wartość semafora na 99
+   for(i=0;i<n-1;++i)
+   {
+        if(t[i]>t[i+1])
+            i=n+99; //żeby uzależnić to od długości tablicy
+   }
+
+   if(i!=n+100) //gdy i jest różne od 100 (w ostatnim przebiegu do 99 zostało dodane jeszcze 1)
+        printf("\nCiag jest rosnacy");
+    else
+        printf("\nCiag nie jest rosnacy");
+    
+   */
+
+            ////////////////// CZY CIĄG JEST CO DRUGA NIEPARZYSTA /////////////////////
+
+
+            ///////////// WERSJA Z PRZEINKREMENTOWANIEM //////////////////
+
+    for(i=0;i<n-1;i+=2)
+    {
+        if((t[i]%2!=0 && t[i+1]%2!=0) || (t[i]%2!=1 && t[i+1]%2!=1))
+            i=n+98;
+    }
+        
+    if(i!=n+100) //gdy i jest różne od 100 (w ostatnim przebiegu do 99 zostało dodane jeszcze 1)
+        printf("\nCiag jest przeplatany");
+    else
+        printf("\nCiag nie jest przeplatany");
+}
+
