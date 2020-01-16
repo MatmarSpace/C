@@ -90,11 +90,19 @@ int main()
         printf("%d ",t[i]);
     }
 
-    */   //ZROBIĆ CZY CIĄG JEST TAKI SAM OD PRZODU JAK OD TYŁU
+    */   
+   
+   //CZY CIĄG JEST TAKI SAM OD PRZODU JAK OD TYŁU
 
-   //for(i=0;i<(float)n/2;++i)
-   //{
-   //    if(is)
-   //}
-
+   for(i=0;i<(float)n/2;++i)
+   {
+       if(t[i]!=t[n-i-1])
+       {
+           i=99;
+       }
+   }
+    if(i==100)
+        printf("Ciag nie jest taki sam od obu stron");
+    else
+        printf("Ciag jest taki sam od obu stron");
 }
