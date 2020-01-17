@@ -1,0 +1,66 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <stdbool.h>
+
+#define n 10
+
+int t[n];
+int s[n];
+int z[n];
+int dlugosc=0;
+int i,j=0;
+bool semafor=true;
+
+int main()
+{
+    srand(time(0));
+
+    for(i=0;i<n;++i)   //wykonaj n razy
+    {
+        t[i]=rand()%50;
+        z[i]=rand()%50;
+    }
+    printf("Stworzona tablica: ");
+
+    for(i=0;i<n;++i)
+        printf("%d ",t[i]);
+
+    for(i=0;i<n;++i)
+    {
+        if(t[i]%2==0)
+        {
+            s[j]=t[i];
+            ++dlugosc;
+            ++j;
+        }
+    }
+    printf("\nElementy parzyste to: ");
+
+    for(i=0;i<dlugosc;++i)
+        printf("%d ",s[i]);
+
+    dlugosc=0;
+    j=0;
+    for(i=0;i<n;++i)
+    {
+        if(t[i]==z[i])
+        {
+            s[j]=i;
+            j++;
+            ++dlugosc;
+        }
+        else
+            semafor=false;
+    }
+    if(semafor)
+        printf("\ntablie sa takie same");
+    else if (dlugosc>0)
+    {
+        printf("\nTablica jest tak sama na pozycjach: ");
+        for(i=0;i<dlugosc;++i)
+            printf("%d ",s[i]);
+    }
+    else
+        printf("\nTablica nie posiada elementow wspolnych");
+}
