@@ -10,6 +10,7 @@ int s[n];
 int z[n];
 int dlugosc=0;
 int i,j=0;
+int max,min;
 bool semafor=true;
 
 int main()
@@ -63,4 +64,22 @@ int main()
     }
     else
         printf("\nTablica nie posiada elementow wspolnych");
+
+    max=t[0];
+    min=t[0];
+    for(i=0;i<n;++i)
+    {
+        if(t[i]>max)
+            max=t[i];
+        if(t[i]<min)
+            min=t[i];
+    }
+    printf("\nmin: %d",min);
+    printf("\nmax: %d",max);
+
+    //znaleźć liczbę która powtarza się najwięcej razy jeśli są dwie takie liczby to napisać, że nie ma takiej, która się powtarza najwięcej razy
+    for(i=0;i<n;++i)
+    {
+
+    }
 }
