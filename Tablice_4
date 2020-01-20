@@ -13,14 +13,21 @@ int i,j=0;
 int max,min;
 bool semafor=true;
 
+int sprawdzana;
+int taNajlepsza;
+int ostatniaNajlepsza;
+int iloscRazy=0;
+int najwIloscRazy=0;
+int ostatniaNajwIloscRazy=0;
+
 int main()
 {
     srand(time(0));
 
     for(i=0;i<n;++i)   //wykonaj n razy
     {
-        t[i]=rand()%50;
-        z[i]=rand()%50;
+        t[i]=rand()%10;
+        z[i]=rand()%10;
     }
     printf("Stworzona tablica: ");
 
@@ -78,8 +85,33 @@ int main()
     printf("\nmax: %d",max);
 
     //znaleźć liczbę która powtarza się najwięcej razy jeśli są dwie takie liczby to napisać, że nie ma takiej, która się powtarza najwięcej razy
+    taNajlepsza=t[0];
     for(i=0;i<n;++i)
     {
-
+        sprawdzana=t[i];
+        iloscRazy=0;
+        for(j=0;j<n;++j)
+        {
+            if(t[j]==t[i])
+                ++iloscRazy;
+        }
+        if(iloscRazy>=najwIloscRazy && taNajlepsza!=sprawdzana)
+        {
+            ostatniaNajlepsza=taNajlepsza;
+            taNajlepsza=sprawdzana;
+            ostatniaNajwIloscRazy=najwIloscRazy;
+            najwIloscRazy=iloscRazy;
+        }
     }
+
+    printf("\n%d",taNajlepsza);
+    printf("\n%d",ostatniaNajlepsza);
+    printf("\n%d",najwIloscRazy);
+    printf("\n%d",ostatniaNajwIloscRazy);
+    if(najwIloscRazy==ostatniaNajwIloscRazy)
+        printf("\n nie ma takiej");
+    else
+        printf("\n najwiecej razy powtarza sie: %d",taNajlepsza);
+    
+
 }
