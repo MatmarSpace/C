@@ -1,0 +1,50 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+//zmienne
+int a,b;
+char znak;
+
+int main()
+{
+    //interface kalkulatora
+    printf("WITAMY W NASZYM KALKULATORZE!\n");
+    printf("=============================\n");
+    printf("Wpisz pierwsza liczbe: ");
+    scanf("%d",&a);
+    printf("Wpisz druga liczbe: ");
+    scanf("%d",&b);
+    printf("Podaj znak dzialania: ");
+
+    //wyczyszczenie bufora klawiatury
+    fflush(stdin);
+    //wczytanie znaku działania
+    scanf("%c",&znak);
+
+    //instrukcja switch
+    switch(znak)
+    {
+        case '+':
+        {
+            printf("%d",a+b);
+            break;
+        }
+        case '-':
+        {
+            printf("%d",a-b);
+            break;
+        }
+        case '*':
+        {
+            printf("%d",a*b);
+            break;
+        }
+        case '/':
+        {
+            printf("%f",(float)a/(float)b);
+            break;
+        }
+    }
+
+    return 0;
+}
