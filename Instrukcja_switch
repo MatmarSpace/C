@@ -26,23 +26,30 @@ int main()
     {
         case '+':
         {
-            printf("%d",a+b);
+            printf("%d+%d=%d",a,b,a+b);
             break;
         }
         case '-':
         {
-            printf("%d",a-b);
+            printf("%d-%d=%d",a,b,a-b);
             break;
         }
         case '*':
         {
-            printf("%d",a*b);
+            printf("%d*%d=%d",a,b,a*b);
             break;
         }
         case '/':
         {
-            printf("%f",(float)a/(float)b);
+            if(b!=0)
+                printf("%d/%d=%f",a,b,(float)a/(float)b);
+            else
+                printf("nie dzielimy przez 0");            
             break;
+        }
+        default:
+        {
+            printf("podales zly znak");
         }
     }
 
