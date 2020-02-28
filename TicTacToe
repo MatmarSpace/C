@@ -1,0 +1,108 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+#define n 3
+
+char t[n][n];
+int i,j,posX,posY;
+int czyjaRunda=0;
+
+void wypisanieTablicy();
+void postawZnak();
+void czyWygrana();
+
+int main()
+{
+    for(i=0;i<n;i++)
+        {
+            for(j=0;j<n;j++)
+            {
+                t[i][j]='_';
+            }
+        }
+    while(1)
+    {
+        wypisanieTablicy();
+        postawZnak();
+    }
+}
+
+
+//FUNKCJE
+void wypisanieTablicy()
+{
+    system("cls");
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            printf("%4c",t[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+void postawZnak()
+{
+    if(czyjaRunda==0)
+    {
+        printf("\n=================");
+        printf("\nRUNDA GRACZA KOLKO");
+        printf("\n=================");
+        printf("\nWPROWADZ ZNAK:\n");
+        printf("\nPozycja X: ");
+        scanf("%d",&posX);
+        printf("\nPozycja Y: ");
+        scanf("%d",&posY);
+        t[posX][posY]='X';
+        czyjaRunda=1;
+    }
+    else if(czyjaRunda==1)
+    {
+        printf("\n=================");
+        printf("\nRUNDA GRACZA KRZYZYK");
+        printf("\n=================");
+        printf("\nWPROWADZ ZNAK:\n");
+        printf("\nPozycja X: ");
+        scanf("%d",&posX);
+        printf("\nPozycja Y: ");
+        scanf("%d",&posY);
+        t[posX][posY]='Y';
+        czyjaRunda=0;
+    }
+    else if(czyjaRunda==2)
+    {
+        printf("\n=================");
+        printf("\nWYGRYWA KOLKO!");
+    }
+    else
+    {
+        printf("\n=================");
+        printf("\nWYGRYWA KRZYZYK");
+    }
+}
+
+void czyWygrana()
+{
+    if(t[0][0]=='X'&&t[0][1]=='X'&&t[0][2]=='X');
+        czyjaRunda==2;
+    if(t[0][0]=='X'&&t[0][1]=='X'&&t[0][2]=='X');
+        czyjaRunda==2;
+    if(t[0][0]=='X'&&t[0][1]=='X'&&t[0][2]=='X');
+        czyjaRunda==2;
+    if(t[0][0]=='X'&&t[0][1]=='X'&&t[0][2]=='X');
+        czyjaRunda==2;
+    if(t[0][0]=='X'&&t[0][1]=='X'&&t[0][2]=='X');
+        czyjaRunda==2;
+    if(t[0][0]=='X'&&t[0][1]=='X'&&t[0][2]=='X');
+        czyjaRunda==2;
+    if(t[0][0]=='X'&&t[0][1]=='X'&&t[0][2]=='X');
+        czyjaRunda==2;
+    if(t[0][0]=='X'&&t[0][1]=='X'&&t[0][2]=='X');
+        czyjaRunda==2;
+
+}
+
+
+
+
