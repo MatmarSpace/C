@@ -1,0 +1,68 @@
+#include<stdlib.h>
+#include<stdio.h>
+#include<time.h>
+
+//stałe
+#define n 10
+
+//zmienne
+int i;
+int A[n];
+int B[n];
+int C[2*n];
+
+//deklaracje funkcji
+int losujTablice(int tablica[n]);
+int drukujTablice(int tablica[n], int length);
+int sklejTablice(int tablica[n], int tablica_2[n], int tablica_3[2*n]);
+
+//main
+int main()
+{
+    srand(time(0));
+    losujTablice(A);
+    losujTablice(B);
+    drukujTablice(A, n);
+    drukujTablice(B, n);
+    sklejTablice(A, B, C);
+    drukujTablice(C, 2*n);
+
+    return 0;
+}
+
+//funkcje
+int losujTablice(int tablica[n])
+{
+    int * tablicaPointer = tablica;
+    for(i=0;i<n;i++)
+    {
+        *tablicaPointer=rand()%10;
+        tablicaPointer++;
+    }
+}
+
+int drukujTablice(int tablica[n], int length)
+{
+    int * tablicaPointer = tablica;
+    for(i=0;i<length;i++)
+    {
+        printf("%d ",*tablicaPointer);
+        tablicaPointer++;
+    }
+    printf("\n");
+}
+
+int sklejTablice(int tablica[n], int tablica_2[n], int tablica_3[2*n])
+{
+    int * tablicaPointer = tablica;
+    int * tablicaPointer2 = tablica_2;
+    int * tablicaPointer3 = tablica_3;
+    for(i=0;i<2*n;i+=2)
+    {
+        *tablicaPointer3=*tablicaPointer;
+        *(tablicaPointer3+1)=*tablicaPointer2;
+        tablicaPointer++;
+        tablicaPointer2++;
+        tablicaPointer3+=2;
+    }
+}
